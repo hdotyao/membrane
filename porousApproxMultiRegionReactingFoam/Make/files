@@ -1,0 +1,4 @@
+fluid/compressibleCourantNo.C
+multiRegionReactingFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/porousAppoxMultiRegionReactingFoam
