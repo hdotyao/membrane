@@ -1,4 +1,5 @@
 // Initialise fluid field pointer lists
+Info<< fluidRegions.size() << endl;
 PtrList<rhoReactionThermo> thermoFluid(fluidRegions.size());
 PtrList<volScalarField> rhoFluid(fluidRegions.size());
 PtrList<volVectorField> UFluid(fluidRegions.size());
@@ -9,6 +10,9 @@ PtrList<surfaceScalarField> ghfFluid(fluidRegions.size());
 PtrList<compressible::turbulenceModel> turbulenceFluid(fluidRegions.size());
 PtrList<CombustionModel<rhoReactionThermo>> reactionFluid(fluidRegions.size());
 PtrList<volScalarField> p_rghFluid(fluidRegions.size());
+//Modification here
+PtrList<volScalarField> p_Map(fluidRegions.size());
+PtrList<volScalarField> Y_Map(fluidRegions.size());
 
 PtrList<volScalarField> KFluid(fluidRegions.size());
 PtrList<volScalarField> dpdtFluid(fluidRegions.size());
@@ -33,6 +37,64 @@ PtrList<dimensionedScalar> rhoMaxFluid(fluidRegions.size());
 PtrList<pressureControl> pressureControls(fluidRegions.size());
 
 const uniformDimensionedVectorField& g = meshObjects::gravity::New(runTime);
+
+IOdictionary membraneProperties//Dict Variable Name
+(
+    IOobject
+    (
+        "membraneProperties",
+        runTime.constant(),   //Dict under Constant
+        fluidRegions[0],
+        IOobject::MUST_READ_IF_MODIFIED,
+        IOobject::NO_WRITE
+    )
+);
+
+dimensionedScalar AbyV
+(
+    membraneProperties.lookup("AbyV")
+);
+//todo change unit
+dimensionedScalar Q1
+(
+    "Q1",
+    dimless,
+    membraneProperties
+);
+dimensionedScalar Q2
+(
+    "Q2",
+    dimless,
+    membraneProperties
+);
+dimensionedScalar Q3
+(
+    "Q3",
+    dimless,
+    membraneProperties
+);
+
+dimensionedScalar WM1
+(
+    "WM1",
+    dimless,
+    membraneProperties
+);
+dimensionedScalar WM2
+(
+    "WM2",
+    dimless,
+    membraneProperties
+);
+dimensionedScalar WM3
+(
+    "WM3",
+    dimless,
+    membraneProperties
+);
+
+
+
 
 // Populate fluid field pointer lists
 forAll(fluidRegions, i)
@@ -322,13 +384,16 @@ forAll(fluidRegions, i)
                 "p_Map",
                 runTime.timeName(),
                 fluidRegions[i],
-                IOobject::MUST_READ,
-                IOobject::AUTO_WRITE
+                IOobject::NO_READ,
+                IOobject::NO_WRITE
             ),
             fluidRegions[i]
         )
     );
 //Composition Y is from basicMultiComponentMixture.C
+    
+
+
     Y_Map.set
     (
         i,
@@ -337,11 +402,11 @@ forAll(fluidRegions, i)
             IOobject
             (
                 "Y_Map",
-                IOobject::groupName(species_[i], phaseName),
+                //IOobject::groupName(species_[i], phaseName),
                 runTime.timeName(), //Maybe mesh.time().timeName(),
                 fluidRegions[i],
-                IOobject::MUST_READ,
-                IOobject::AUTO_WRITE
+                IOobject::NO_READ,
+                IOobject::NO_WRITE
             ),
             fluidRegions[i]
         )

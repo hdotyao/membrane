@@ -1,5 +1,5 @@
 SOURCE = \
 fluid/compressibleCourantNo.C \
-multiRegionReactingFoam.C \
+porousAppoxMultiRegionReactingFoam.C \
 
 # sources

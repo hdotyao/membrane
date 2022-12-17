@@ -30,28 +30,16 @@ Description
     Solve the continuity for density.
 
 \*---------------------------------------------------------------------------*/
-
 {
-    dimensionedScalar AbyV
-    (
-        membraneProperties.lookup("AbyV")
-    );
 
-    dimensionedScalar Qi
-    (
-        membraneProperties.lookup("Qi")
-    );
-    
-   // PtrList<volVectorField>& Smk = AbyV * W(i) * Qi*( p*thermo.W()*Y[i]/W(i) - p_Map* thermo.W()*Y_Map/W(i) );
-   // How to sum all the terms?
     fvScalarMatrix rhoEqn
     (
         fvm::ddt(rho)
       + fvc::div(phi)
       ==
         fvOptions(rho)
-      + Smk
-      //+ Source Term
+      + fvc::Su(Smk,rho)
+      //Source Term
     );
 
     fvOptions.constrain(rhoEqn);
@@ -59,6 +47,6 @@ Description
     rhoEqn.solve();
 
     fvOptions.correct(rho);
-}
 
+}
 // ************************************************************************* //

@@ -2,18 +2,9 @@
 
     MRF.correctBoundaryVelocity(U);
 
-    dimensionedScalar AbyV
-    (
-        membraneProperties.lookup("AbyV")
-    );
 
-    dimensionedScalar Qi
-    (
-        membraneProperties.lookup("Qi")
-    );
+    volVectorField Suk = -U * Smk;
     
-    PtrList<volVectorField>& Suk = -U * ( AbyV * W(i) * Qi*( p*thermo.W()*Y[i]/W(i) - p_Map* thermo.W()*Y_Map/W(i) ) );
-
     UEqn =
     (
         fvm::ddt(rho, U) + fvm::div(phi, U)
@@ -21,7 +12,7 @@
       + turbulence.divDevRhoReff(U)
      ==
         fvOptions(rho, U)
-      + Suk
+      + fvm::Su(Suk,U)
       // + Source Term due to porous area & Suk
     );
 
