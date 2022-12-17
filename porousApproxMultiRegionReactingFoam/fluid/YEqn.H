@@ -54,7 +54,7 @@ if (Y.size())
             volScalarField& Yi = Y[i];
             volScalarField Sik = AbyV*WMi*Qi*(p*WMavg*Yi/WMi - p_Mapped* WMavg*Y_Mapped/WMi);
 
-            forAll(Smk,i) 
+            forAll(Smk,i) //No need to forAll Smk
             {
                 Smk[i] += Sik[i];
             }
