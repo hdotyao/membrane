@@ -1,0 +1,1287 @@
+undergrad@hppro1:~/OpenFOAM/YAO/dualRegionPorousApproxMembraneFoam/solver/solvers/porousApproxMultiRegionReactingFoam$ wmake porousAppoxMultiRegionReactingFoam.C 
+wmake .
+Making dependency list for source file porousAppoxMultiRegionReactingFoam.C
+g++ -std=c++11 -m64 -pthread -DOPENFOAM=2206 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -Wno-unknown-pragmas -O3  -DNoRepository -ftemplate-depth-100  -I./fluid -I./include -I/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude -I/usr/OpenFOAM-v2206/src/meshTools/lnInclude -I/usr/OpenFOAM-v2206/src/sampling/lnInclude -I/usr/OpenFOAM-v2206/src/transportModels/compressible/lnInclude -I/usr/OpenFOAM-v2206/src/thermophysicalModels/basic/lnInclude -I/usr/OpenFOAM-v2206/src/thermophysicalModels/specie/lnInclude -I/usr/OpenFOAM-v2206/src/thermophysicalModels/reactionThermo/lnInclude -I/usr/OpenFOAM-v2206/src/thermophysicalModels/chemistryModel/lnInclude -I/usr/OpenFOAM-v2206/src/ODE/lnInclude -I/usr/OpenFOAM-v2206/src/combustionModels/lnInclude -I/usr/OpenFOAM-v2206/src/TurbulenceModels/turbulenceModels/lnInclude -I/usr/OpenFOAM-v2206/src/TurbulenceModels/compressible/lnInclude -I/usr/OpenFOAM-v2206/src/thermophysicalModels/radiation/lnInclude -I/usr/OpenFOAM-v2206/src/regionModels/regionModel/lnInclude -I/usr/OpenFOAM-v2206/src/regionFaModels\lnInclude -iquote. -IlnInclude -I/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude -I/usr/OpenFOAM-v2206/src/OSspecific/POSIX/lnInclude   -fPIC -c porousAppoxMultiRegionReactingFoam.C -o Make/linux64GccDPInt32Opt/porousAppoxMultiRegionReactingFoam.o
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/postProcess.H:147,
+                 from porousAppoxMultiRegionReactingFoam.C:64:
+./createFields.H: In function ‘int main(int, char**)’:
+./createFields.H:56:1: warning: ‘Foam::dimensioned<Type>::dimensioned(Foam::Istream&) [with Type = double]’ is deprecated: Since 2018-11 [-Wdeprecated-declarations]
+   56 | );
+      | ^
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedType.H:571,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedScalar.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/TimeState.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/Time.H:50,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvCFD.H:4,
+                 from porousAppoxMultiRegionReactingFoam.C:38:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedType.C:305:1: note: declared here
+  305 | Foam::dimensioned<Type>::dimensioned(Istream& is)
+      | ^~~~
+In file included from porousAppoxMultiRegionReactingFoam.C:70:
+createFields.H:56:1: warning: ‘Foam::dimensioned<Type>::dimensioned(Foam::Istream&) [with Type = double]’ is deprecated: Since 2018-11 [-Wdeprecated-declarations]
+   56 | );
+      | ^
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedType.H:571,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedScalar.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/TimeState.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/Time.H:50,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvCFD.H:4,
+                 from porousAppoxMultiRegionReactingFoam.C:38:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/dimensionedType.C:305:1: note: declared here
+  305 | Foam::dimensioned<Type>::dimensioned(Istream& is)
+      | ^~~~
+In file included from porousAppoxMultiRegionReactingFoam.C:87:
+./include/setMultiRegionDeltaT.H:47:12: warning: unused variable ‘deltaTFluid’ [-Wunused-variable]
+   47 |     scalar deltaTFluid =
+      |            ^~~~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/faceMapper.H:42,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvPatchMapper.H:41,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:49,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/morphFieldMapper.H:43:1: error: ‘namespace’ definition is not allowed here
+   43 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvPatchMapper.H:41,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:49,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/faceMapper.H:47:1: error: ‘namespace’ definition is not allowed here
+   47 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:49,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvPatchMapper.H:47:1: error: ‘namespace’ definition is not allowed here
+   47 | namespace Foam
+      | ^~~~~~~~~
+In file included from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:55:1: error: ‘namespace’ definition is not allowed here
+   55 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointBoundaryMesh.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointMesh.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatch.H:48:1: error: ‘namespace’ definition is not allowed here
+   48 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointMesh.H:41,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointBoundaryMesh.H:45:1: error: ‘namespace’ definition is not allowed here
+   45 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointMesh.H:45:1: error: ‘namespace’ definition is not allowed here
+   45 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:54:1: error: ‘namespace’ definition is not allowed here
+   54 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:511,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFieldFunctions.H:36:1: error: ‘namespace’ definition is not allowed here
+   36 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:514,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:35:1: error: a template declaration cannot appear at block scope
+   35 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:66:1: error: a template declaration cannot appear at block scope
+   66 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:95:1: error: a template declaration cannot appear at block scope
+   95 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:118:1: error: a template declaration cannot appear at block scope
+  118 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:138:1: error: a template declaration cannot appear at block scope
+  138 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:173:1: error: a template declaration cannot appear at block scope
+  173 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:249:1: error: a template declaration cannot appear at block scope
+  249 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:296:1: error: a template declaration cannot appear at block scope
+  296 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.C:327,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:514,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFieldNew.C:31:1: error: a template declaration cannot appear at block scope
+   31 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFieldNew.C:104:1: error: a template declaration cannot appear at block scope
+  104 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:515,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchField.H:44:1: error: ‘namespace’ definition is not allowed here
+   44 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchField.H:131,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchField.H:515,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchField.C:33:1: error: a template declaration cannot appear at block scope
+   33 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchField.C:53:1: error: a template declaration cannot appear at block scope
+   53 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchField.C:78:1: error: a template declaration cannot appear at block scope
+   78 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFields.H:32,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointFields.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFieldsFwd.H:35:1: error: ‘namespace’ definition is not allowed here
+   35 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/barycentric.H:39,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:43,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/Barycentric.H:47:1: error: ‘namespace’ definition is not allowed here
+   47 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/Barycentric.H:135,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/barycentric.H:39,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:43,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:30:1: error: a template declaration cannot appear at block scope
+   30 | template<class Cmpt>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:55:1: error: a template declaration cannot appear at block scope
+   55 | template<class Cmpt>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:69:1: error: a template declaration cannot appear at block scope
+   69 | template<class Cmpt>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:83:1: error: a template declaration cannot appear at block scope
+   83 | template<class Cmpt>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:97:1: error: a template declaration cannot appear at block scope
+   97 | template<class Cmpt>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/BarycentricI.H:113:1: error: ‘namespace’ definition is not allowed here
+  113 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:43,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/barycentric.H:43:1: error: ‘namespace’ definition is not allowed here
+   43 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPointRef.H:38,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:62,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.H:57:1: error: ‘namespace’ definition is not allowed here
+   57 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:31,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.H:334,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPointRef.H:38,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:62,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPoints.H:47:1: error: ‘namespace’ definition is not allowed here
+   47 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.H:334,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPointRef.H:38,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:62,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:36:1: error: a template declaration cannot appear at block scope
+   36 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:66:1: error: a template declaration cannot appear at block scope
+   66 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:82:1: error: a template declaration cannot appear at block scope
+   82 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:96:1: error: a template declaration cannot appear at block scope
+   96 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:136:1: error: a template declaration cannot appear at block scope
+  136 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:150:1: error: a template declaration cannot appear at block scope
+  150 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:164:1: error: a template declaration cannot appear at block scope
+  164 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:178:1: error: a template declaration cannot appear at block scope
+  178 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:231:1: error: a template declaration cannot appear at block scope
+  231 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:254:1: error: a template declaration cannot appear at block scope
+  254 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:276:1: error: a template declaration cannot appear at block scope
+  276 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:414:1: error: a template declaration cannot appear at block scope
+  414 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:498:1: error: a template declaration cannot appear at block scope
+  498 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:515:1: error: a template declaration cannot appear at block scope
+  515 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:537:1: error: a template declaration cannot appear at block scope
+  537 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:566:1: error: a template declaration cannot appear at block scope
+  566 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedronI.H:1034:1: error: a template declaration cannot appear at block scope
+ 1034 | template<class Point, class PointRef>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.H:339,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPointRef.H:38,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:62,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.C:34:1: error: a template declaration cannot appear at block scope
+   34 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.C:267:1: error: a template declaration cannot appear at block scope
+  267 | template<class Point, class PointRef>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetrahedron.C:315:1: error: a template declaration cannot appear at block scope
+  315 | template<class Point, class PointRef>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:62,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetPointRef.H:42:1: error: ‘namespace’ definition is not allowed here
+   42 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:70:1: error: ‘namespace’ definition is not allowed here
+   70 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndices.H:245,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:44,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:31:24: error: ‘tetIndices’ in namespace ‘Foam’ does not name a type
+   31 | inline constexpr Foam::tetIndices::tetIndices() noexcept
+      |                        ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:39:24: error: ‘tetIndices’ in namespace ‘Foam’ does not name a type
+   39 | inline constexpr Foam::tetIndices::tetIndices
+      |                        ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:54:28: error: ‘Foam::tetIndices’ has not been declared
+   54 | inline Foam::triFace Foam::tetIndices::faceTriIs
+      |                            ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:55:1: error: qualified-id in declaration before ‘(’ token
+   55 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:94:28: error: ‘Foam::tetIndices’ has not been declared
+   94 | inline Foam::triFace Foam::tetIndices::triIs
+      |                            ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:95:1: error: qualified-id in declaration before ‘(’ token
+   95 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:134:14: error: ‘tetPointRef’ in namespace ‘Foam’ does not name a type; did you mean ‘triPointRef’?
+  134 | inline Foam::tetPointRef Foam::tetIndices::tet(const polyMesh& mesh) const
+      |              ^~~~~~~~~~~
+      |              triPointRef
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:149:32: error: ‘Foam::tetIndices’ has not been declared
+  149 | inline Foam::triPointRef Foam::tetIndices::faceTri(const polyMesh& mesh) const
+      |                                ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:149:51: error: qualified-id in declaration before ‘(’ token
+  149 | inline Foam::triPointRef Foam::tetIndices::faceTri(const polyMesh& mesh) const
+      |                                                   ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:163:32: error: ‘Foam::tetIndices’ has not been declared
+  163 | inline Foam::triPointRef Foam::tetIndices::oldFaceTri
+      |                                ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:164:1: error: qualified-id in declaration before ‘(’ token
+  164 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:180:26: error: ‘Foam::tetIndices’ has not been declared
+  180 | inline Foam::label Foam::tetIndices::compare
+      |                          ^~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:181:1: error: qualified-id in declaration before ‘(’ token
+  181 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:198:29: error: qualified-id in declaration before ‘(’ token
+  198 | inline bool Foam::operator==(const tetIndices& a, const tetIndices& b) noexcept
+      |                             ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/tetIndicesI.H:210:29: error: qualified-id in declaration before ‘(’ token
+  210 | inline bool Foam::operator!=(const tetIndices& a, const tetIndices& b) noexcept
+      |                             ^
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:49:1: error: ‘namespace’ definition is not allowed here
+   49 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.C:31,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:189,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/calculatedPointPatchFields.H:36:1: error: ‘namespace’ definition is not allowed here
+   36 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:189,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.C:35:1: error: a template declaration cannot appear at block scope
+   35 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.C:52,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolation.H:189,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:38,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationNew.C:57:1: error: a template declaration cannot appear at block scope
+   57 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:43:1: error: ‘namespace’ definition is not allowed here
+   43 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:108,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPointI.H:30:1: error: a template declaration cannot appear at block scope
+   30 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPointI.H:60:1: error: a template declaration cannot appear at block scope
+   60 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:32,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/emptyFvPatch.H:46:1: error: ‘namespace’ definition is not allowed here
+   46 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatchField.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:33,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatch.H:45:1: error: ‘namespace’ definition is not allowed here
+   45 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:33,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatchField.H:45:1: error: ‘namespace’ definition is not allowed here
+   45 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatchField.H:149,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:33,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatchField.C:32:1: error: a template declaration cannot appear at block scope
+   32 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/coupledPointPatchField.C:55:1: error: a template declaration cannot appear at block scope
+   55 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:51,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraint.H:54:1: error: ‘namespace’ definition is not allowed here
+   54 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraint.H:126,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:51,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:30:14: error: ‘pointConstraint’ in namespace ‘Foam’ does not name a type
+   30 | inline Foam::pointConstraint::pointConstraint()
+      |              ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:36:14: error: ‘pointConstraint’ in namespace ‘Foam’ does not name a type
+   36 | inline Foam::pointConstraint::pointConstraint(const Tuple2<label, vector>& pc)
+      |              ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:42:14: error: ‘pointConstraint’ in namespace ‘Foam’ does not name a type
+   42 | inline Foam::pointConstraint::pointConstraint(Istream& is)
+      |              ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:50:19: error: ‘Foam::pointConstraint’ has not been declared
+   50 | inline void Foam::pointConstraint::applyConstraint(const vector& cd)
+      |                   ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:50:51: error: qualified-id in declaration before ‘(’ token
+   50 | inline void Foam::pointConstraint::applyConstraint(const vector& cd)
+      |                                                   ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:79:19: error: ‘Foam::pointConstraint’ has not been declared
+   79 | inline void Foam::pointConstraint::combine(const pointConstraint& pc)
+      |                   ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:79:43: error: qualified-id in declaration before ‘(’ token
+   79 | inline void Foam::pointConstraint::combine(const pointConstraint& pc)
+      |                                           ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:120:27: error: ‘Foam::pointConstraint’ has not been declared
+  120 | inline Foam::tensor Foam::pointConstraint::constraintTransformation() const
+      |                           ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:120:68: error: qualified-id in declaration before ‘(’ token
+  120 | inline Foam::tensor Foam::pointConstraint::constraintTransformation() const
+      |                                                                    ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:141:19: error: ‘Foam::pointConstraint’ has not been declared
+  141 | inline void Foam::pointConstraint::unconstrainedDirections
+      |                   ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:142:1: error: qualified-id in declaration before ‘(’ token
+  142 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:187:27: error: ‘Foam::pointConstraint’ has not been declared
+  187 | inline Foam::vector Foam::pointConstraint::constrainDisplacement
+      |                           ^~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:188:1: error: qualified-id in declaration before ‘(’ token
+  188 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:216:19: error: ‘Foam::combineConstraintsEqOp’ has not been declared
+  216 | inline void Foam::combineConstraintsEqOp::operator()
+      |                   ^~~~~~~~~~~~~~~~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:217:1: error: qualified-id in declaration before ‘(’ token
+  217 | (
+      | ^
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointConstraintI.H:226:14: error: ‘pointConstraint’ in namespace ‘Foam’ does not name a type
+  226 | inline Foam::pointConstraint Foam::transform
+      |              ^~~~~~~~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:55:1: error: ‘namespace’ definition is not allowed here
+   55 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraintsTemplates.C:30,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:209,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.H:45:1: error: ‘namespace’ definition is not allowed here
+   45 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:30,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.H:234,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraintsTemplates.C:30,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:209,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/pointPatchFieldMapper.H:41:1: error: ‘namespace’ definition is not allowed here
+   41 | namespace Foam
+      | ^~~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.H:234,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchFields.H:31,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraintsTemplates.C:30,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:209,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:34:1: error: a template declaration cannot appear at block scope
+   34 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:79:1: error: a template declaration cannot appear at block scope
+   79 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:107:1: error: a template declaration cannot appear at block scope
+  107 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:135:1: error: a template declaration cannot appear at block scope
+  135 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:164:1: error: a template declaration cannot appear at block scope
+  164 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:184:1: error: a template declaration cannot appear at block scope
+  184 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:204:1: error: a template declaration cannot appear at block scope
+  204 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:224:1: error: a template declaration cannot appear at block scope
+  224 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/valuePointPatchField.C:244:1: error: a template declaration cannot appear at block scope
+  244 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraints.H:209,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:34,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraintsTemplates.C:34:1: error: a template declaration cannot appear at block scope
+   34 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/pointConstraintsTemplates.C:112:1: error: a template declaration cannot appear at block scope
+  112 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolation.H:316,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:29,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:38:1: error: a template declaration cannot appear at block scope
+   38 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:128:1: error: a template declaration cannot appear at block scope
+  128 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:225:1: error: a template declaration cannot appear at block scope
+  225 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:339:1: error: a template declaration cannot appear at block scope
+  339 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:379:1: error: a template declaration cannot appear at block scope
+  379 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:428:1: error: a template declaration cannot appear at block scope
+  428 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:509:1: error: a template declaration cannot appear at block scope
+  509 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volPointInterpolate.C:595:1: error: a template declaration cannot appear at block scope
+  595 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.H:113,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:31,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/interpolationCellPoint.C:33:1: error: a template declaration cannot appear at block scope
+   33 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.H:322,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:33,
+                 from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:32:1: error: a template declaration cannot appear at block scope
+   32 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:66:1: error: a template declaration cannot appear at block scope
+   66 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:107:1: error: a template declaration cannot appear at block scope
+  107 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:138:1: error: a template declaration cannot appear at block scope
+  138 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:180:1: error: a template declaration cannot appear at block scope
+  180 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:203:1: error: a template declaration cannot appear at block scope
+  203 | template<class Type>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/mixedFvPatchField.C:224:1: error: a template declaration cannot appear at block scope
+  224 | template<class Type>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0.H:370,
+                 from ./include/mapSolverTest.C:47,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:37:1: error: a template declaration cannot appear at block scope
+   37 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:87:1: error: a template declaration cannot appear at block scope
+   87 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:153:1: error: a template declaration cannot appear at block scope
+  153 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:248:1: error: a template declaration cannot appear at block scope
+  248 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+/usr/OpenFOAM-v2206/src/sampling/lnInclude/meshToMesh0Templates.C:360:1: error: a template declaration cannot appear at block scope
+  360 | template<class Type, class CombineOp>
+      | ^~~~~~~~
+In file included from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/processorFvPatch.H:43,
+                 from ./include/mapSolverTest.C:48,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/processorPolyPatch.H:52:1: error: ‘namespace’ definition is not allowed here
+   52 | namespace Foam
+      | ^~~~~~~~~
+In file included from ./include/mapSolverTest.C:48,
+                 from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+/usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/processorFvPatch.H:47:1: error: ‘namespace’ definition is not allowed here
+   47 | namespace Foam
+      | ^~~~~~~~~
+In file included from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+./include/mapSolverTest.C:56:11: error: ‘meshToMesh0’ does not name a type
+   56 |     const meshToMesh0& meshToMesh0Interp,
+      |           ^~~~~~~~~~~
+./include/mapSolverTest.C:57:11: error: ‘meshToMesh0’ does not name a type; did you mean ‘meshToMesh0Interp’?
+   57 |     const meshToMesh0::order& mapOrder,
+      |           ^~~~~~~~~~~
+      |           meshToMesh0Interp
+./include/mapSolverTest.C:57:29: error: expected unqualified-id before ‘&’ token
+   57 |     const meshToMesh0::order& mapOrder,
+      |                             ^
+./include/mapSolverTest.C:57:29: error: expected ‘)’ before ‘&’ token
+   57 |     const meshToMesh0::order& mapOrder,
+      |                             ^
+      |                             )
+./include/mapSolverTest.C:53:1: note: to match this ‘(’
+   53 | (
+      | ^
+./include/mapSolverTest.C:57:31: error: expected initializer before ‘mapOrder’
+   57 |     const meshToMesh0::order& mapOrder,
+      |                               ^~~~~~~~
+./include/mapSolverTest.C:80:11: error: ‘meshToMesh0’ does not name a type
+   80 |     const meshToMesh0& meshToMesh0Interp,
+      |           ^~~~~~~~~~~
+./include/mapSolverTest.C:81:11: error: ‘meshToMesh0’ does not name a type; did you mean ‘meshToMesh0Interp’?
+   81 |     const meshToMesh0::order& mapOrder
+      |           ^~~~~~~~~~~
+      |           meshToMesh0Interp
+./include/mapSolverTest.C:81:29: error: expected unqualified-id before ‘&’ token
+   81 |     const meshToMesh0::order& mapOrder
+      |                             ^
+./include/mapSolverTest.C:81:29: error: expected ‘)’ before ‘&’ token
+   81 |     const meshToMesh0::order& mapOrder
+      |                             ^
+      |                             )
+./include/mapSolverTest.C:77:1: note: to match this ‘(’
+   77 | (
+      | ^
+./include/mapSolverTest.C:81:31: error: expected initializer before ‘mapOrder’
+   81 |     const meshToMesh0::order& mapOrder
+      |                               ^~~~~~~~
+In file included from porousAppoxMultiRegionReactingFoam.C:110:
+./fluid/solveFluid.H:15:9: error: ‘meshToMesh0Interp’ was not declared in this scope
+   15 |         meshToMesh0Interp,
+      |         ^~~~~~~~~~~~~~~~~
+./fluid/solveFluid.H:16:9: error: ‘mapOrder’ was not declared in this scope
+   16 |         mapOrder
+      |         ^~~~~~~~
+./fluid/solveFluid.H:11:5: error: ‘MapSubMesh’ was not declared in this scope
+   11 |     MapSubMesh
+      |     ^~~~~~~~~~
+./fluid/solveFluid.H:34:9: error: ‘meshToMesh0Interp’ was not declared in this scope
+   34 |         meshToMesh0Interp,
+      |         ^~~~~~~~~~~~~~~~~
+./fluid/solveFluid.H:35:9: error: ‘mapOrder’ was not declared in this scope
+   35 |         mapOrder
+      |         ^~~~~~~~
+./fluid/solveFluid.H:30:5: error: ‘MapSubMesh’ was not declared in this scope
+   30 |     MapSubMesh
+      |     ^~~~~~~~~~
+In file included from ./fluid/solveFluid.H:58,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+./fluid/YEqn.H:34:20: error: no matching function for call to ‘Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::GeometricField()’
+   34 |     volScalarField WMavg;
+      |                    ^~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.H:694,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricScalarField.H:40,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricFields.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volFields.H:39,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolationScheme.C:30,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolationScheme.H:309,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolate.H:43,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvc.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvCFD.H:6,
+                 from porousAppoxMultiRegionReactingFoam.C:38:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:823:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::wordList = Foam::List<Foam::word>]’
+  823 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:823:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:754:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::wordList = Foam::List<Foam::word>]’
+  754 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:754:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:792:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const labelList&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::labelList = Foam::List<int>]’
+  792 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:792:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:723:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  723 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:723:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:702:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::word&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  702 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:702:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:674:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::word&, const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  674 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:674:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:651:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  651 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:651:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:623:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  623 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:623:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:602:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  602 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:602:1: note:   candidate expects 1 argument, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:575:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  575 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:575:1: note:   candidate expects 1 argument, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:544:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dictionary&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  544 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:544:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:508:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, bool) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  508 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:508:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:485:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::tmp<Foam::Field<Type> >&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  485 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:485:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:462:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, Foam::Field<Type>&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  462 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:462:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:439:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::Field<Type>&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  439 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:439:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:416:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, Foam::Field<Type>&&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  416 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:416:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:393:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::Field<Type>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  393 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:393:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:373:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(Foam::GeometricField<Type, PatchField, GeoMesh>::Internal&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  373 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:373:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:353:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Internal&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  353 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:353:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:332:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::DimensionedField<TypeR, GeoMesh> >&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  332 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:332:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:311:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, Foam::GeometricField<Type, PatchField, GeoMesh>::Internal&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  311 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:311:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:290:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Internal&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  290 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:290:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:265:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensioned<Type>&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh; Foam::wordList = Foam::List<Foam::word>]’
+  265 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:265:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:241:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensioned<Type>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  241 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:241:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:218:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh; Foam::wordList = Foam::List<Foam::word>]’
+  218 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:218:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:196:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  196 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:196:1: note:   candidate expects 4 arguments, 0 provided
+In file included from ./fluid/solveFluid.H:58,
+                 from porousAppoxMultiRegionReactingFoam.C:110:
+./fluid/YEqn.H:41:30: error: no match for call to ‘(Foam::dimensionedScalar {aka Foam::dimensioned<double>}) (Foam::label&)’
+   41 |             WMavg[i] += WMi(j)*Y[j][i];//todo
+      |                              ^
+In file included from ./fluid/pEqn.H:116,
+                 from porousAppoxMultiRegionReactingFoam.C:130:
+./fluid/rhoEqn.H:45:17: error: ‘Smk’ was not declared in this scope
+   45 |       + fvc::Su(Smk,rho)
+      |                 ^~~
+In file included from porousAppoxMultiRegionReactingFoam.C:121:
+./fluid/setRegionFluidFields.H:43:65: warning: unused variable ‘fields’ [-Wunused-variable]
+   43 |     multivariateSurfaceInterpolationScheme<scalar>::fieldTable& fields =
+      |                                                                 ^~~~~~
+./fluid/setRegionFluidFields.H:46:21: warning: unused variable ‘Qdot’ [-Wunused-variable]
+   46 |     volScalarField& Qdot = QdotFluid[i];
+      |                     ^~~~
+In file included from porousAppoxMultiRegionReactingFoam.C:122:
+./fluid/readFluidMultiRegionPIMPLEControls.H:9:16: warning: unused variable ‘momentumPredictor’ [-Wunused-variable]
+    9 |     const bool momentumPredictor =
+      |                ^~~~~~~~~~~~~~~~~
+In file included from ./fluid/solveFluid.H:1,
+                 from porousAppoxMultiRegionReactingFoam.C:159:
+./include/mapSolverTest.C:56:11: error: ‘meshToMesh0’ does not name a type
+   56 |     const meshToMesh0& meshToMesh0Interp,
+      |           ^~~~~~~~~~~
+./include/mapSolverTest.C:57:11: error: ‘meshToMesh0’ does not name a type; did you mean ‘meshToMesh0Interp’?
+   57 |     const meshToMesh0::order& mapOrder,
+      |           ^~~~~~~~~~~
+      |           meshToMesh0Interp
+./include/mapSolverTest.C:57:29: error: expected unqualified-id before ‘&’ token
+   57 |     const meshToMesh0::order& mapOrder,
+      |                             ^
+./include/mapSolverTest.C:57:29: error: expected ‘)’ before ‘&’ token
+   57 |     const meshToMesh0::order& mapOrder,
+      |                             ^
+      |                             )
+./include/mapSolverTest.C:53:1: note: to match this ‘(’
+   53 | (
+      | ^
+./include/mapSolverTest.C:57:31: error: expected initializer before ‘mapOrder’
+   57 |     const meshToMesh0::order& mapOrder,
+      |                               ^~~~~~~~
+./include/mapSolverTest.C:80:11: error: ‘meshToMesh0’ does not name a type
+   80 |     const meshToMesh0& meshToMesh0Interp,
+      |           ^~~~~~~~~~~
+./include/mapSolverTest.C:81:11: error: ‘meshToMesh0’ does not name a type; did you mean ‘meshToMesh0Interp’?
+   81 |     const meshToMesh0::order& mapOrder
+      |           ^~~~~~~~~~~
+      |           meshToMesh0Interp
+./include/mapSolverTest.C:81:29: error: expected unqualified-id before ‘&’ token
+   81 |     const meshToMesh0::order& mapOrder
+      |                             ^
+./include/mapSolverTest.C:81:29: error: expected ‘)’ before ‘&’ token
+   81 |     const meshToMesh0::order& mapOrder
+      |                             ^
+      |                             )
+./include/mapSolverTest.C:77:1: note: to match this ‘(’
+   77 | (
+      | ^
+./include/mapSolverTest.C:81:31: error: expected initializer before ‘mapOrder’
+   81 |     const meshToMesh0::order& mapOrder
+      |                               ^~~~~~~~
+In file included from porousAppoxMultiRegionReactingFoam.C:159:
+./fluid/solveFluid.H:15:9: error: ‘meshToMesh0Interp’ was not declared in this scope
+   15 |         meshToMesh0Interp,
+      |         ^~~~~~~~~~~~~~~~~
+./fluid/solveFluid.H:16:9: error: ‘mapOrder’ was not declared in this scope
+   16 |         mapOrder
+      |         ^~~~~~~~
+./fluid/solveFluid.H:11:5: error: ‘MapSubMesh’ was not declared in this scope
+   11 |     MapSubMesh
+      |     ^~~~~~~~~~
+./fluid/solveFluid.H:34:9: error: ‘meshToMesh0Interp’ was not declared in this scope
+   34 |         meshToMesh0Interp,
+      |         ^~~~~~~~~~~~~~~~~
+./fluid/solveFluid.H:35:9: error: ‘mapOrder’ was not declared in this scope
+   35 |         mapOrder
+      |         ^~~~~~~~
+./fluid/solveFluid.H:30:5: error: ‘MapSubMesh’ was not declared in this scope
+   30 |     MapSubMesh
+      |     ^~~~~~~~~~
+In file included from ./fluid/solveFluid.H:58,
+                 from porousAppoxMultiRegionReactingFoam.C:159:
+./fluid/YEqn.H:34:20: error: no matching function for call to ‘Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>::GeometricField()’
+   34 |     volScalarField WMavg;
+      |                    ^~~~~
+In file included from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.H:694,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricScalarField.H:40,
+                 from /usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricFields.H:40,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/volFields.H:39,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolationScheme.C:30,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolationScheme.H:309,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/surfaceInterpolate.H:43,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvc.H:41,
+                 from /usr/OpenFOAM-v2206/src/finiteVolume/lnInclude/fvCFD.H:6,
+                 from porousAppoxMultiRegionReactingFoam.C:38:
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:823:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::wordList = Foam::List<Foam::word>]’
+  823 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:823:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:754:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::wordList = Foam::List<Foam::word>]’
+  754 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:754:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:792:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const labelList&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::labelList = Foam::List<int>]’
+  792 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:792:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:723:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  723 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:723:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:702:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::word&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  702 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:702:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:674:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::word&, const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  674 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:674:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:651:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  651 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:651:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:623:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  623 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:623:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:602:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::tmp<Foam::GeometricField<Type, PatchField, GeoMesh> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  602 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:602:1: note:   candidate expects 1 argument, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:575:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::GeometricField<Type, PatchField, GeoMesh>&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  575 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:575:1: note:   candidate expects 1 argument, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:544:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dictionary&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  544 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:544:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:508:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, bool) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  508 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:508:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:485:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::tmp<Foam::Field<Type> >&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  485 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:485:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:462:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, Foam::Field<Type>&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  462 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:462:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:439:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::Field<Type>&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  439 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:439:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:416:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, Foam::Field<Type>&&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  416 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:416:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:393:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::Field<Type>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  393 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:393:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:373:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(Foam::GeometricField<Type, PatchField, GeoMesh>::Internal&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  373 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:373:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:353:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Internal&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  353 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:353:1: note:   candidate expects 2 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:332:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Foam::tmp<Foam::DimensionedField<TypeR, GeoMesh> >&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh]’
+  332 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:332:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:311:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, Foam::GeometricField<Type, PatchField, GeoMesh>::Internal&&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  311 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:311:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:290:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Internal&, const Foam::PtrList<PatchField<Type> >&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Internal = Foam::DimensionedField<double, Foam::volMesh>]’
+  290 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:290:1: note:   candidate expects 3 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:265:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensioned<Type>&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh; Foam::wordList = Foam::List<Foam::word>]’
+  265 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:265:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:241:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensioned<Type>&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  241 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:241:1: note:   candidate expects 4 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:218:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const wordList&, const wordList&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh; Foam::wordList = Foam::List<Foam::word>]’
+  218 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:218:1: note:   candidate expects 5 arguments, 0 provided
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:196:1: note: candidate: ‘Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField(const Foam::IOobject&, const Mesh&, const Foam::dimensionSet&, const Foam::word&) [with Type = double; PatchField = Foam::fvPatchField; GeoMesh = Foam::volMesh; Foam::GeometricField<Type, PatchField, GeoMesh>::Mesh = Foam::fvMesh]’
+  196 | Foam::GeometricField<Type, PatchField, GeoMesh>::GeometricField
+      | ^~~~
+/usr/OpenFOAM-v2206/src/OpenFOAM/lnInclude/GeometricField.C:196:1: note:   candidate expects 4 arguments, 0 provided
+In file included from ./fluid/solveFluid.H:58,
+                 from porousAppoxMultiRegionReactingFoam.C:159:
+./fluid/YEqn.H:41:30: error: no match for call to ‘(Foam::dimensionedScalar {aka Foam::dimensioned<double>}) (Foam::label&)’
+   41 |             WMavg[i] += WMi(j)*Y[j][i];//todo
+      |                              ^
+In file included from porousAppoxMultiRegionReactingFoam.C:170:
+./fluid/setRegionFluidFields.H:1:13: warning: unused variable ‘mesh’ [-Wunused-variable]
+    1 |     fvMesh& mesh = fluidRegions[i];
+      |             ^~~~
+./fluid/setRegionFluidFields.H:27:21: warning: unused variable ‘U’ [-Wunused-variable]
+   27 |     volVectorField& U = UFluid[i];
+      |                     ^
+./fluid/setRegionFluidFields.H:28:25: warning: unused variable ‘phi’ [-Wunused-variable]
+   28 |     surfaceScalarField& phi = phiFluid[i];
+      |                         ^~~
+./fluid/setRegionFluidFields.H:30:36: warning: unused variable ‘turbulence’ [-Wunused-variable]
+   30 |     compressible::turbulenceModel& turbulence = turbulenceFluid[i];
+      |                                    ^~~~~~~~~~
+./fluid/setRegionFluidFields.H:31:21: warning: unused variable ‘K’ [-Wunused-variable]
+   31 |     volScalarField& K = KFluid[i];
+      |                     ^
+./fluid/setRegionFluidFields.H:32:21: warning: unused variable ‘dpdt’ [-Wunused-variable]
+   32 |     volScalarField& dpdt = dpdtFluid[i];
+      |                     ^~~~
+./fluid/setRegionFluidFields.H:34:21: warning: unused variable ‘p’ [-Wunused-variable]
+   34 |     volScalarField& p = thermo.p();
+      |                     ^
+./fluid/setRegionFluidFields.H:35:27: warning: unused variable ‘psi’ [-Wunused-variable]
+   35 |     const volScalarField& psi = thermo.psi();
+      |                           ^~~
+./fluid/setRegionFluidFields.H:37:21: warning: unused variable ‘p_rgh’ [-Wunused-variable]
+   37 |     volScalarField& p_rgh = p_rghFluid[i];
+      |                     ^~~~~
+./fluid/setRegionFluidFields.H:40:27: warning: unused variable ‘gh’ [-Wunused-variable]
+   40 |     const volScalarField& gh = ghFluid[i];
+      |                           ^~
+./fluid/setRegionFluidFields.H:41:31: warning: unused variable ‘ghf’ [-Wunused-variable]
+   41 |     const surfaceScalarField& ghf = ghfFluid[i];
+      |                               ^~~
+./fluid/setRegionFluidFields.H:43:65: warning: unused variable ‘fields’ [-Wunused-variable]
+   43 |     multivariateSurfaceInterpolationScheme<scalar>::fieldTable& fields =
+      |                                                                 ^~~~~~
+./fluid/setRegionFluidFields.H:46:21: warning: unused variable ‘Qdot’ [-Wunused-variable]
+   46 |     volScalarField& Qdot = QdotFluid[i];
+      |                     ^~~~
+./fluid/setRegionFluidFields.H:49:20: warning: unused variable ‘MRF’ [-Wunused-variable]
+   49 |     IOMRFZoneList& MRF = MRFfluid[i];
+      |                    ^~~
+./fluid/setRegionFluidFields.H:50:18: warning: unused variable ‘fvOptions’ [-Wunused-variable]
+   50 |     fv::options& fvOptions = fluidFvOptions[i];
+      |                  ^~~~~~~~~
+./fluid/setRegionFluidFields.H:52:21: warning: unused variable ‘UEqn’ [-Wunused-variable]
+   52 |     fvVectorMatrix& UEqn = UEqFluid[i];
+      |                     ^~~~
+./fluid/setRegionFluidFields.H:61:10: warning: unused variable ‘frozenFlow’ [-Wunused-variable]
+   61 |     bool frozenFlow = frozenFlowFluid[i];
+      |          ^~~~~~~~~~
+./fluid/setRegionFluidFields.H:63:17: warning: unused variable ‘pRefCell’ [-Wunused-variable]
+   63 |     const label pRefCell = pRefCellFluid[i];
+      |                 ^~~~~~~~
+./fluid/setRegionFluidFields.H:64:18: warning: unused variable ‘pRefValue’ [-Wunused-variable]
+   64 |     const scalar pRefValue = pRefValueFluid[i];
+      |                  ^~~~~~~~~
+./fluid/setRegionFluidFields.H:69:28: warning: unused variable ‘pressureControl’ [-Wunused-variable]
+   69 |     const pressureControl& pressureControl = pressureControls[i];
+      |                            ^~~~~~~~~~~~~~~
+make: *** [/usr/OpenFOAM-v2206/wmake/rules/General/transform:35: Make/linux64GccDPInt32Opt/porousAppoxMultiRegionReactingFoam.o] Error 1
+

@@ -1,17 +1,5 @@
 tmp<fv::convectionScheme<scalar>> mvConvection(nullptr);
-#include "IOdictionary.H"
 
-IOdictionary membraneProperties//Dict Variable Name
-(
-    IOobject
-    (
-        "membraneProperties",
-        runTime.constant(),   //Dict under Constant
-        mesh,
-        IOobject::MUST_READ_IF_MODIFIED,
-        IOobject::NO_WRITE
-    )
-);
 
 if (Y.size())
 {
@@ -28,15 +16,6 @@ if (Y.size())
 }
 
 {
-    dimensionedScalar AbyV
-    (
-        membraneProperties.lookup("AbyV")
-    );
-
-    dimensionedScalar Qi
-    (
-        membraneProperties.lookup("Qi")
-    );
 
     reaction.correct();
     Qdot = reaction.Qdot();
@@ -47,13 +26,38 @@ if (Y.size())
         dimensionedScalar("Yt", dimless, 0)
     );
 
+    dimensionedScalar WMi;
+    if (i==0) {WMi = WM1;}
+    else if (i==1){WMi = WM2;}
+    else if (i==2){WMi = WM3;}
+
+    volScalarField WMavg;
+
+    forAll(Y[0],i)//cell
+    {
+        WMavg[i] = 0;//species
+        forAll(Y,j) 
+        {
+            WMavg[i] += WMi(j)*Y[j][i];//todo
+        }
+    }
+
     forAll(Y, i)
     {
+        dimensionedScalar Qi;
+        if (i==0) {Qi = Q1;}
+        else if (i==1) {Qi = Q2;}
+        else if (i==2) {Qi = Q3;}
+
         if (i != inertIndex && composition.active(i))
         {
             volScalarField& Yi = Y[i];
-            //source calculation ptrlist
-            PtrList<volScalarField>& Sik = AbyV*W(i)*Qi*( p*thermo.W()*Yi/W(i) - p_Map* thermo.W()*Y_Map/W(i) );
+            volScalarField Sik = AbyV*WMi*Qi*(p*WMavg*Yi/WMi - p_Mapped* WMavg*Y_Mapped/WMi);
+
+            forAll(Smk,i) 
+            {
+                Smk[i] += Sik[i];
+            }
 
             fvScalarMatrix YiEqn
             (
@@ -63,10 +67,10 @@ if (Y.size())
              ==
                 reaction.R(Yi)
               + fvOptions(rho, Yi)
-              + Sik
+              + fvm::Su(Sik,Yi) //fvm::Sp, fvm::Susp ?
             );
 
-//mol weight look up: /usr/OpenFOAM-v2206/tutorials/combustion/reactingFoam/laminar/counterFlowFlame2D
+//mol weight look: /usr/OpenFOAM-v2206/tutorials/combustion/reactingFoam/laminar/counterFlowFlame2D
 
             YiEqn.relax();
 
