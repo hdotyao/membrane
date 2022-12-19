@@ -1,4 +1,4 @@
-#include "mapFields"
+#include "mapFields.H"
 
 if (finalIter)
 {
