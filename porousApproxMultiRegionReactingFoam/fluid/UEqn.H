@@ -1,9 +1,6 @@
     // Solve the Momentum equation
 
     MRF.correctBoundaryVelocity(U);
-
-
-    volVectorField Suk = -U * Smk;
     
     UEqn =
     (
@@ -12,7 +9,7 @@
       + turbulence.divDevRhoReff(U)
      ==
         fvOptions(rho, U)
-      + fvm::Su(Suk,U)
+      - fvm::Sp(Smk,U)
       // + Source Term due to porous area & Suk
     );
 

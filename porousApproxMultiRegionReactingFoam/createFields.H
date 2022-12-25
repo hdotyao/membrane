@@ -10,9 +10,6 @@ PtrList<surfaceScalarField> ghfFluid(fluidRegions.size());
 PtrList<compressible::turbulenceModel> turbulenceFluid(fluidRegions.size());
 PtrList<CombustionModel<rhoReactionThermo>> reactionFluid(fluidRegions.size());
 PtrList<volScalarField> p_rghFluid(fluidRegions.size());
-//Modification here
-PtrList<volScalarField> p_Map(fluidRegions.size());
-PtrList<volScalarField> Y_Map(fluidRegions.size());
 
 PtrList<volScalarField> KFluid(fluidRegions.size());
 PtrList<volScalarField> dpdtFluid(fluidRegions.size());
@@ -38,6 +35,9 @@ PtrList<pressureControl> pressureControls(fluidRegions.size());
 
 const uniformDimensionedVectorField& g = meshObjects::gravity::New(runTime);
 
+
+
+
 IOdictionary membraneProperties//Dict Variable Name
 (
     IOobject
@@ -54,47 +54,16 @@ dimensionedScalar AbyV
 (
     membraneProperties.lookup("AbyV")
 );
+
 //todo change unit
-dimensionedScalar Q1
-(
-    "Q1",
-    dimless,
-    membraneProperties
-);
-dimensionedScalar Q2
-(
-    "Q2",
-    dimless,
-    membraneProperties
-);
-dimensionedScalar Q3
-(
-    "Q3",
-    dimless,
-    membraneProperties
-);
+salarList Q(membraneProperties.lookup("Q")));
 
-dimensionedScalar WM1
-(
-    "WM1",
-    dimless,
-    membraneProperties
-);
-dimensionedScalar WM2
-(
-    "WM2",
-    dimless,
-    membraneProperties
-);
-dimensionedScalar WM3
-(
-    "WM3",
-    dimless,
-    membraneProperties
-);
+label nYmap(membraneProperties.lookup("nYmap"));
 
-
-
+//Modification here
+PtrList<volScalarField> pMap(fluidRegions.size());
+PtrList<volScalarField> YMap(fluidRegions.size());
+PtrList<volScalarField> MWavg(fluidRegions.size());
 
 // Populate fluid field pointer lists
 forAll(fluidRegions, i)
@@ -374,34 +343,32 @@ forAll(fluidRegions, i)
         );
     }
 
-    p_Map.set
+    pMap.set
     (
         i,
         new volScalarField
         (
             IOobject
             (
-                "p_Map",
+                "pMap_"+name(i),
                 runTime.timeName(),
                 fluidRegions[i],
                 IOobject::NO_READ,
                 IOobject::NO_WRITE
             ),
-            fluidRegions[i]
+            thermoFluid[i].p()
         )
     );
-//Composition Y is from basicMultiComponentMixture.C
-    
 
-
-    Y_Map.set
+    //YMap is for all the specics needed to be mapped in a region
+    YMap.set
     (
         i,
         new volScalarField
         (
             IOobject
             (
-                "Y_Map",
+                "YMap_"+name(i),,
                 //IOobject::groupName(species_[i], phaseName),
                 runTime.timeName(), //Maybe mesh.time().timeName(),
                 fluidRegions[i],
@@ -412,6 +379,46 @@ forAll(fluidRegions, i)
         )
     );
 }
+
+//  create maps
+
+    meshToMesh0::order mapOrder = meshToMesh0::INTERPOLATE;
+
+    HashTable<word> patchMap;
+    wordList cuttingPatches;
+
+    IOdictionary mapFieldsDict
+    (
+        IOobject
+        (
+            "mapFieldsDict",
+            runTime.system(),
+            runTime,
+            IOobject::MUST_READ_IF_MODIFIED,
+            IOobject::NO_WRITE,
+            false
+        )
+    );
+
+    mapFieldsDict.readEntry("patchMap", patchMap);
+    mapFieldsDict.readEntry("cuttingPatches", cuttingPatches);
+
+    // Create the interpolation scheme
+    PtrList<meshToMesh0>  meshToMesh0Interp(fluidRegions.size());
+    forAll(meshToMesh0Interp,i)
+    {
+        meshToMesh0Interp.set
+        (
+            i,
+            new meshToMesh0
+            (
+                fluidRegions[1-rI],  //meshSource,
+                fluidRegions[rI],  //meshTarget,
+                patchMap,
+                cuttingPatches
+            )
+        );
+    }
 
 
 

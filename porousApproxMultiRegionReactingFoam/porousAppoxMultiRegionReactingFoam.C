@@ -49,6 +49,7 @@ Description
 #include "loopControl.H"
 #include "pressureControl.H"
 
+#include "mapVolScalarField.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

@@ -38,7 +38,7 @@ Description
       + fvc::div(phi)
       ==
         fvOptions(rho)
-      + fvc::Su(Smk,rho)
+      + Smk
       //Source Term
     );
 
