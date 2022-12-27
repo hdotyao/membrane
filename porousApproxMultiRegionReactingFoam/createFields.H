@@ -56,7 +56,7 @@ dimensionedScalar AbyV
 );
 
 //todo change unit
-salarList Q(membraneProperties.lookup("Q")));
+scalarList Q(membraneProperties.lookup("Q"));
 
 label nYmap(membraneProperties.lookup("nYmap"));
 
