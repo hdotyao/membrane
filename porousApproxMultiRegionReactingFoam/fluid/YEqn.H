@@ -57,7 +57,7 @@ if (Y.size())
 
             dimensionedScalar Qi("Qi",[],Q[i]);
             dimensionedScalar sc(AbyV*Qi/composition.W(i));
-            volScalarField    YSu(sc*pMap*MWavg[1-rI]*YMap[rI]);
+            volScalarField    YSu(sc*pMap[rI]*MWavg[1-rI]*YMap[rI]);
             volScalarField    YSp(sc*p*MWavg[rI]);
     
             fvScalarMatrix YiEqn
