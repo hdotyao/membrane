@@ -67,3 +67,19 @@
     const dimensionedScalar rhoMin = rhoMinFluid[i];
 
     const pressureControl& pressureControl = pressureControls[i];
+
+
+    MWavg.set(i, thermo.W());
+
+    volScalarField Smk
+    (
+        IOobject
+        (
+            "Smk", 
+            runTime.timeName(), 
+            mesh
+        ),
+        mesh,
+        dimensionedScalar("Smk", dimless, 0) //todo change unit
+    );
+ 
