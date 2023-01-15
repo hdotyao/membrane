@@ -1,6 +1,13 @@
 {
     "files.associations": {
         "multiRegionReactingFoam.C": "cpp",
-        "compressibleCourantNo.C": "cpp"
+        "compressibleCourantNo.C": "cpp",
+        "mapVolScalarField.H": "cpp",
+        "createFields.H": "cpp",
+        "YEqn.H": "cpp",
+        "setRegionFluidFields.H": "cpp",
+        "solveFluid.H": "cpp",
+        "mapSolverTest.C": "cpp",
+        "storeOldFluidFields.H": "cpp"
     }
 }

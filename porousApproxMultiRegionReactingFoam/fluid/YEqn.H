@@ -26,14 +26,16 @@ if (Y.size())
         dimensionedScalar("Yt", dimless, 0)
     );
 
+    label rI = i ;
+    const  meshToMesh0::order mapOrder = meshToMesh0::INTERPOLATE;
+    const Foam::meshToMesh0& map = meshToMesh0Interp[rI];
 
     // get the source term for interregion mass transfer
-    label rI = i ;
-    MapSubMesh
+    MapSubMesh<eqOp>
     (
         pMap[rI],   //fieldTarget,
-        p[1-rI],    //fieldSource,
-        meshToMesh0Interp[rI],
+        reactionFluid[1-rI].thermo().p(),    //fieldSource,
+        map,
         mapOrder
     );
             
@@ -47,16 +49,16 @@ if (Y.size())
 
             PtrList<volScalarField>& Ysrc = reactionFluid[1-rI].thermo().composition().Y();//Composition Y
 
-            MapSubMesh
+            MapSubMesh<eqOp>
             (
                 YMap[rI],   //fieldTarget,
                 Ysrc[i],    //fieldSource,
-                meshToMesh0Interp[rI],
+                map,
                 mapOrder
             );
 
-            dimensionedScalar Qi("Qi",[],Q[i]);
-            dimensionedScalar sc(AbyV*Qi/composition.W(i));
+            dimensionedScalar Qi("Qi",dimensionSet(0,-2,-1,0,1,0,0),Q[i]);
+            dimensionedScalar sc(AbyV*Qi/thermo.composition().W(i));
             volScalarField    YSu(sc*pMap[rI]*MWavg[1-rI]*YMap[rI]);
             volScalarField    YSp(sc*p*MWavg[rI]);
     

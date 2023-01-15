@@ -50,15 +50,18 @@ IOdictionary membraneProperties//Dict Variable Name
     )
 );
 
+
 dimensionedScalar AbyV
 (
-    membraneProperties.lookup("AbyV")
+    "AbyV"
+    ,dimensionSet(0,-1,0,0,0,0,0),
+    membraneProperties.getScalar("AbyV")
 );
 
 //todo change unit
 scalarList Q(membraneProperties.lookup("Q"));
 
-label nYmap(membraneProperties.lookup("nYmap"));
+label nYmap(membraneProperties.getLabel("nYmap"));
 
 //Modification here
 PtrList<volScalarField> pMap(fluidRegions.size());
@@ -368,7 +371,7 @@ forAll(fluidRegions, i)
         (
             IOobject
             (
-                "YMap_"+name(i),,
+                "YMap_"+name(i),
                 //IOobject::groupName(species_[i], phaseName),
                 runTime.timeName(), //Maybe mesh.time().timeName(),
                 fluidRegions[i],
@@ -381,8 +384,6 @@ forAll(fluidRegions, i)
 }
 
 //  create maps
-
-    meshToMesh0::order mapOrder = meshToMesh0::INTERPOLATE;
 
     HashTable<word> patchMap;
     wordList cuttingPatches;
@@ -405,11 +406,11 @@ forAll(fluidRegions, i)
 
     // Create the interpolation scheme
     PtrList<meshToMesh0>  meshToMesh0Interp(fluidRegions.size());
-    forAll(meshToMesh0Interp,i)
+    forAll(meshToMesh0Interp,rI)
     {
         meshToMesh0Interp.set
         (
-            i,
+            rI,
             new meshToMesh0
             (
                 fluidRegions[1-rI],  //meshSource,

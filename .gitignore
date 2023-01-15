@@ -7,6 +7,8 @@ VTK/
 polyMesh/
 .vscode/
 settings.json
+*.dep
+*.o
 
 # Editor and misc backup files - anywhere
 *~
