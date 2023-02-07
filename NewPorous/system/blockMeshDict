@@ -1,0 +1,137 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+//..................................//
+
+// Dimensions of the cylinder:
+cx 0;
+cy 0;
+cz 0;
+
+cylinderThickness 0.005;
+r 0.001;
+
+//..................................//
+
+// Calculations for cylinder geometry:
+h #calc "$cylinderThickness+$cz";
+tph #calc "$cylinderThickness+$cz+$cz";
+
+vx #calc "$cx+$r";
+nvx #calc "$cx-$r";
+
+vy #calc "$cy+$r";
+nvy #calc "$cy-$r";
+
+// Calculations for arcs:
+c1 #calc "$cx + ($r*cos(45.0))"; //cosine in first quadrant
+s1 #calc "$cy + ($r*sin(45.0))"; //sine in first quadrant
+
+c2 #calc "$cx + ($r*cos(135.0))"; //cosine in first quadrant
+s2 #calc "$cy + ($r*sin(135.0))"; //sine in first quadrant
+
+c3 #calc "$cx + ($r*cos(225.0))"; //cosine in first quadrant
+s3 #calc "$cy + ($r*sin(225.0))"; //sine in first quadrant
+
+c4 #calc "$cx + ($r*cos(315.0))"; //cosine in first quadrant
+s4 #calc "$cy + ($r*sin(315.0))"; //sine in first quadrant
+
+vertices
+(   
+//   Vertices for the cylinder :
+//   x       y       z
+    ($vx     $cy     $cz)//0           
+    ($cx     $vy     $cz)//1        
+    ($nvx    $cy     $cz)//2     
+    ($cx     $nvy    $cz)//3 
+ 
+    ($vx     $cy     $h)//4            
+    ($cx     $vy     $h)//5            
+    ($nvx    $cy     $h)//6            
+    ($cx     $nvy    $h)//7              
+    ($cx     $cy     $cz)//8           
+    ($cx     $cy     $h)//9            
+);
+
+
+blocks
+(
+    hex ( 0 1 8 8 4 5 9 9 )    ( 25  25  25 )    simpleGrading (1 1 1)
+    hex ( 1 2 8 8 5 6 9 9 )    ( 25  25  25 )    simpleGrading (1 1 1)
+    hex ( 2 3 8 8 6 7 9 9 )    ( 25  25  25 )    simpleGrading (1 1 1)
+    hex ( 3 0 8 8 7 4 9 9 )    ( 25  25  25 )    simpleGrading (1 1 1)
+);
+
+// Edges is a dictionary where we define arcs between vertices.
+edges
+(
+     arc 0 1 ($c1 $s1 $cz)
+     arc 1 2 ($c2 $s2 $cz)
+     arc 2 3 ($c3 $s3 $cz)
+     arc 3 0 ($c4 $s4 $cz)
+     
+     arc 4 5 ($c1 $s1 $h)
+     arc 5 6 ($c2 $s2 $h)
+     arc 6 7 ($c3 $s3 $h)
+     arc 7 4 ($c4 $s4 $h)
+);
+
+// Boundaries is where we define our boundary patches.
+boundary
+(
+   outlet
+    {
+        type patch;
+        faces
+        (
+            (0 8 8 1)
+            (1 8 8 2)
+            (2 8 8 3)
+            (3 8 8 0)
+        );
+    }
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (5 9 9 4)
+            (6 9 9 5)
+            (7 9 9 6)
+            (4 9 9 7)
+        );
+    }
+    wall
+    {
+        type wall;
+        faces
+        (
+            (0 1 5 4)
+            (2 6 5 1)
+            (3 7 6 2)
+            (0 4 7 3)
+        );
+    }
+ 
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

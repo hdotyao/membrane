@@ -1,0 +1,88 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+tubesRadius 0.0008;
+shellRadius 0.001;
+cylinderLength 0.005;
+
+actions
+(
+    // tubes
+    {
+        name    tubesCellSet;
+        type    cellSet;
+        action  new;
+        source cylinderToCell;
+        point1       (0 0 0); // start point on cylinder axis
+        point2       (0 0 $cylinderLength);   // end point on cylinder axis
+        radius   $tubesRadius;
+    }
+    {
+        name    tubes;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+
+        set     tubesCellSet;
+    }
+
+    // shell
+    {
+        name    shellCellSet;
+        type    cellSet;
+        action  new;
+        source cylinderToCell;
+        point1       (0 0 0); // start point on cylinder axis
+        point2       (0 0 $cylinderLength);   // end point on cylinder axis
+        radius   $shellRadius;
+        innerRadius $tubesRadius;
+    }
+    {
+        name    shell;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+
+        set     shellCellSet;
+    }
+
+
+    /*{
+        name    shellCellSet;
+        type    cellSet;
+        action  new;
+        source cylinderToCell;
+        point1       (0 0 0); // start point on cylinder axis
+        point2       (0 0 $cylinderLength);   // end point on cylinder axis
+        radius   $tubeRadius;
+    }
+    {
+        name    shellCellSet;
+        type    cellSet;
+        action  invert;
+    }
+    {
+        name    shell;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+
+        set     shellCellSet;
+    }*/
+);
+
+
+// ************************************************************************* //

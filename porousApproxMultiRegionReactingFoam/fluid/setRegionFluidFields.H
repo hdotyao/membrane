@@ -80,6 +80,6 @@
             mesh
         ),
         mesh,
-        dimensionedScalar("Smk", dimless, 0) //todo change unit
+        dimensionedScalar("Smk", dimensionSet(1, -3, -1 , 0, 0), Zero) //todo already change unit
     );
  

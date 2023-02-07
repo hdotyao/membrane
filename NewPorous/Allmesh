@@ -1,0 +1,26 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#------------------------------------------------------------------------------
+
+runApplication blockMesh
+runApplication topoSet
+rm log.topoSet
+#runApplication topoSet -dict system/topoSetDict.f1
+# Restore initial fields
+restore0Dir
+
+runApplication splitMeshRegions -cellZones -overwrite
+
+for region in $(foamListRegions)
+do
+    runApplication -s $region changeDictionary -region $region
+done
+
+cp YMap_0 0/shell/
+cp YMap_1 0/tubes/
+
+echo
+echo "End"
+
+#------------------------------------------------------------------------------

@@ -1,0 +1,137 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+T
+{
+    internalField   uniform 300;
+
+    boundaryField
+    {
+        wall
+        {
+            type            fixedValue;
+            value           uniform 300;
+        }
+
+        "tubes_to_.*"
+        {
+            type            fixedValue;
+            value           uniform 300;
+        }
+
+        "inlet|outlet"
+        {
+            type            zeroGradient;
+        }
+    }
+}
+
+U
+{
+    internalField   uniform (0 0 0);
+
+    boundaryField
+    {
+        inlet//counter current mode is outlet
+        {
+            type            zeroGradient;
+        }
+        
+        outlet//counter current mode is inlet
+        {
+            type            fixedValue;
+            value           uniform ( 0 0 0.0001 );
+        }
+        
+        wall
+        {
+            type            fixedValue;
+            value           uniform ( 0 0 0 );
+        }
+
+        "tubes_to_.*"
+        {
+            type            fixedValue;
+            value           uniform ( 0 0 0 );
+        }
+    }
+}
+
+p_rgh
+{
+    internalField   uniform 1e5;
+
+    boundaryField
+    {
+        inlet
+        {
+            type            fixedFluxPressure;
+            value           uniform 1e5;
+        }
+        
+        outlet
+        {
+            type            fixedFluxPressure;
+            value           uniform 1e5;
+        }
+        
+        wall
+        {
+            type            fixedFluxPressure;
+            value           uniform 1e5;
+        }
+
+        "tubes_to_.*"
+        {
+            type            fixedFluxPressure;
+            value           uniform 1e5;
+        }
+    }
+}
+
+p
+{
+    internalField   uniform 1e5;
+
+    boundaryField
+    {
+        inlet
+        {
+            type            calculated;
+            value           uniform 1e5;
+        }
+        
+        outlet
+        {
+            type            calculated;
+            value           uniform 1e5;
+        }
+        
+        wall
+        {
+            type            calculated;
+            value           uniform 1e5;
+        }
+        
+        "tubes_to_.*"
+        {
+            type            calculated;
+            value           uniform 1e5;
+        }
+    }
+}
+
+// ************************************************************************* //
