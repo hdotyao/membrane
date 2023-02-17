@@ -69,7 +69,7 @@
     const pressureControl& pressureControl = pressureControls[i];
 
 
-    MWavg.set(i, thermo.W());
+    //MWavg.set(i, thermo.W());
 
     volScalarField Smk
     (

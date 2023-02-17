@@ -10,50 +10,74 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      controlDict;
+    object      blockMeshDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     porousAppoxMultiRegionReactingFoam;
+convertToMeters 1;
 
-startFrom       startTime;
+vertices
+(
+   ( 1 0 1 )//0
+   ( 1 0 -1 )//1
+   ( 1 1 1 )//2
+   ( 1 1 -1 )//3
+   ( -1 0 1 )//4
+   ( -1 0 -1 )//5
+   ( -1 1 1 )//6
+   ( -1 1 -1 )//7
+   
+);
 
-startTime       0;
+blocks
+(
+    hex (1 3 7 5 0 2 6 4) (10 10 10) simpleGrading (1 1 1)
+);
 
-stopAt          endTime;
+edges
+(
+);
+boundary
+(
+   inlet
+    {
+        type patch;
+        faces
+        (
+            (2 6 4 0)
+        );
+    }
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (7 3 1 5)
+        );
+    }
+    wall
+    {
+        type wall;
+        faces
+        (
+            (1 3 2 0)
+            (7 5 4 6)
+        );
+    }
+    upAndDown
+    {
+        type empty;
+        faces
+        (
+            (7 6 2 3)
+            (5 1 0 4)
+        );
+    }
+ 
+);
 
-endTime         10;
-
-deltaT          0.0001;
-
-writeControl    adjustableRunTime;
-
-writeInterval   1;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  8;
-
-writeCompression off;
-
-timeFormat      general;
-
-timePrecision   6;
-
-runTimeModifiable yes;
-
-// Maximum diffusion number
-maxDi           10.0;
-
-adjustTimeStep  yes;
-maxCo           1;
-maxDeltaT       1;
-functions
-{
-    
-}
-
+mergePatchPairs
+(
+);
 
 // ************************************************************************* //
