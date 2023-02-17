@@ -9,23 +9,56 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volVectorField;
-    object      U;
+    class       dictionary;
+    object      topoSetDict;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
-
-internalField   uniform (0 0 0);
-
-boundaryField
-{
-    ".*"
+actions
+(
+    // tubes
     {
-        type            calculated;
-        value           $internalField;
+        name    tubesCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0 -1) (1 1 1);
+        }
+
     }
-}
+    {
+        name    tubes;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+
+        set     tubesCellSet;
+    }
+
+    // shell
+    {
+        name    shellCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-1 0 -1) (0 1 1);
+        }
+    }
+    {
+        name    shell;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+
+        set     shellCellSet;
+    }
+
+);
 
 
 // ************************************************************************* //

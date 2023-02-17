@@ -48,7 +48,7 @@ U
         inlet
         {
             type            fixedValue;
-            value           uniform ( 0 0 -0.0001 );
+            value           uniform ( 0 0 -0.0005 );
         }
         
         outlet
@@ -130,6 +130,64 @@ p
         {
             type            calculated;
             value           uniform 1e5;
+        }
+    }
+}
+
+CO2
+{
+    internalField   uniform 0.5;
+
+    boundaryField
+    {
+        inlet
+        {
+            type            fixedValue;
+            value           uniform 0.5;
+        }
+
+        outlet
+        {
+            type            zeroGradient;
+        }
+
+        wall
+        {
+            type            zeroGradient;
+        }
+        
+        "shell_to_.*"
+        {
+            type            zeroGradient;
+        }
+    }
+}
+
+CH4
+{
+    internalField   uniform 0.5;
+
+    boundaryField
+    {
+        inlet
+        {
+            type            fixedValue;
+            value           uniform 0.5;
+        }
+
+        outlet
+        {
+            type            zeroGradient;
+        }
+
+        wall
+        {
+            type            zeroGradient;
+        }
+        
+        "shell_to_.*"
+        {
+            type            zeroGradient;
         }
     }
 }

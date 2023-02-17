@@ -31,6 +31,7 @@ if (Y.size())
     const Foam::meshToMesh0& map = meshToMesh0Interp[rI];
 
     // get the source term for interregion mass transfer
+    Info<< "\nMapping pressure field " << endl;
     MapSubMesh<eqOp>
     (
         pMap[rI],   //fieldTarget,
@@ -41,7 +42,8 @@ if (Y.size())
             
     forAll(Y, i)
     {
-
+        Info<< "\nSolving for region number " <<  rI  << " (" <<fluidRegions[i].name()  << ")" << endl;
+        Info<< "& species number " <<  i  << endl;
         if (i != inertIndex && composition.active(i))
         {
 
@@ -49,6 +51,7 @@ if (Y.size())
 
             PtrList<volScalarField>& Ysrc = reactionFluid[1-rI].thermo().composition().Y();//Composition Y
 
+            Info<< "\nMapping Y field " << endl;
             MapSubMesh<eqOp>
             (
                 YMap[rI],   //fieldTarget,
@@ -57,11 +60,14 @@ if (Y.size())
                 mapOrder
             );
 
-            dimensionedScalar Qi("Qi",dimensionSet(0,-2,-1,0,1,0,0),Q[i]);
+            dimensionedScalar Qi("Qi",dimensionSet(-1, -1, 1, 0, 1, 0),Q[i]);
             dimensionedScalar sc(AbyV*Qi/thermo.composition().W(i));
+            Info<< "\nYSu " << endl;
             volScalarField    YSu(sc*pMap[rI]*MWavg[1-rI]*YMap[rI]);
+            Info<< "\nYSp " << endl;
             volScalarField    YSp(sc*p*MWavg[rI]);
     
+            Info<< "\nSolving YEqn " << endl;
             fvScalarMatrix YiEqn
             (
                 fvm::ddt(rho, Yi)
@@ -73,7 +79,7 @@ if (Y.size())
               + fvOptions(rho, Yi)
               + YSu 
             );
-
+            
             YiEqn.relax();
 
             fvOptions.constrain(YiEqn);
@@ -86,6 +92,8 @@ if (Y.size())
             Yt += Yi;
 
             Smk += YSu - YSp*Yi;
+
+            Info<< "\nYEqn solved " << endl;
 
         }
     }

@@ -104,11 +104,22 @@ int main(int argc, char *argv[])
         {
             const bool finalIter = (oCorr == nOuterCorr-1);
 
+            forAll(fluidRegions, i)     
+            {
+                MWavg.set(i, reactionFluid[i].thermo().W());
+            }
+
             forAll(fluidRegions, i)
             {
                 #include "setRegionFluidFields.H"
                 #include "readFluidMultiRegionPIMPLEControls.H"
                 #include "solveFluid.H"
+
+            }
+            
+            forAll(fluidRegions, i)
+            {    
+                MWavg.release(i);
             }
 
             if (coupled)

@@ -36,6 +36,11 @@ T
         {
             type            zeroGradient;
         }
+        
+        upAndDown
+        {
+            type empty;
+        }
     }
 }
 
@@ -53,7 +58,7 @@ U
         outlet//counter current mode is inlet
         {
             type            fixedValue;
-            value           uniform ( 0 0 0.0005 );
+            value           uniform ( 0 0 0.1 );
         }
         
         wall
@@ -66,6 +71,11 @@ U
         {
             type            fixedValue;
             value           uniform ( 0 0 0 );
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -99,37 +109,47 @@ p_rgh
             type            fixedFluxPressure;
             value           uniform 1e5;
         }
+        
+        upAndDown
+        {
+            type empty;
+        }
     }
 }
 
 p
 {
-    internalField   uniform 1e5;
+    internalField   uniform 1e6;
 
     boundaryField
     {
         inlet
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
         outlet
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
         wall
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
         "tubes_to_.*"
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -143,6 +163,8 @@ CO2
         inlet//counter current mode is outlet
         {
             type            zeroGradient;
+            //inletValue      uniform 0;
+            //value           uniform 0;
         }
 
         outlet//counter current mode is inlet
@@ -155,11 +177,18 @@ CO2
         wall
         {
             type            zeroGradient;
+            //value           uniform 0;
         }
         
         "tubes_to_.*"
         {
             type            zeroGradient;
+            //value           uniform 0;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -173,6 +202,8 @@ CH4
         inlet//counter current mode is outlet
         {
             type            zeroGradient;
+           // inletValue      uniform 0;
+            //value           uniform 0;
         }
 
         outlet//counter current mode is inlet
@@ -185,11 +216,18 @@ CH4
         wall
         {
             type            zeroGradient;
+            //value           uniform 0;
         }
         
         "tubes_to_.*"
         {
             type            zeroGradient;
+            //value           uniform 0;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }

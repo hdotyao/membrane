@@ -26,7 +26,7 @@ T
             value           uniform 300;
         }
 
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            fixedValue;
             value           uniform 300;
@@ -35,6 +35,11 @@ T
         "inlet|outlet"
         {
             type            zeroGradient;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -45,15 +50,15 @@ U
 
     boundaryField
     {
-        inlet//counter current mode is outlet
-        {
-            type            zeroGradient;
-        }
-        
-        outlet//counter current mode is inlet
+        inlet
         {
             type            fixedValue;
-            value           uniform ( 0 0 0.0005 );
+            value           uniform ( 0 0 -0.1 );
+        }
+        
+        outlet
+        {
+            type            zeroGradient;
         }
         
         wall
@@ -62,10 +67,15 @@ U
             value           uniform ( 0 0 0 );
         }
 
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            fixedValue;
             value           uniform ( 0 0 0 );
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -94,42 +104,52 @@ p_rgh
             value           uniform 1e5;
         }
 
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            fixedFluxPressure;
             value           uniform 1e5;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
 
 p
 {
-    internalField   uniform 1e5;
+    internalField   uniform 1e6;
 
     boundaryField
     {
         inlet
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
         outlet
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
         wall
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
         }
         
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            calculated;
-            value           uniform 1e5;
+            value           uniform 1e6;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -140,26 +160,34 @@ CO2
 
     boundaryField
     {
-        inlet//counter current mode is outlet
-        {
-            type            zeroGradient;
-        }
-
-        outlet//counter current mode is inlet
+        inlet
         {
             type            fixedValue;
             value           uniform 0.5;
+        }
 
+        outlet
+        {
+            type            zeroGradient;
+           // inletValue      uniform 0;
+            //value           uniform 0;
         }
 
         wall
         {
             type            zeroGradient;
+           // value           uniform 0;
         }
         
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            zeroGradient;
+            //value           uniform 0;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
@@ -170,26 +198,34 @@ CH4
 
     boundaryField
     {
-        inlet//counter current mode is outlet
-        {
-            type            zeroGradient;
-        }
-
-        outlet//counter current mode is inlet
+        inlet
         {
             type            fixedValue;
             value           uniform 0.5;
+        }
 
+        outlet
+        {
+            type            zeroGradient;
+            //inletValue      uniform 0;
+           // value           uniform 0;
         }
 
         wall
         {
             type            zeroGradient;
+            //value           uniform 0;
         }
         
-        "tubes_to_.*"
+        "shell_to_.*"
         {
             type            zeroGradient;
+           // value           uniform 0;
+        }
+        
+        upAndDown
+        {
+            type empty;
         }
     }
 }
