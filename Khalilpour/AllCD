@@ -1,0 +1,47 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#------------------------------------------------------------------------------
+
+#runApplication 
+blockMesh -region shell
+blockMesh -region tubes
+
+restore0Dir
+
+#mkdir 0/shell
+#mkdir 0/tubes
+
+#cp 0/CH4 0/shell
+#cp 0/CO2 0/shell
+#cp 0/epsilon 0/shell
+#cp 0/k 0/shell
+#cp 0/p 0/shell
+#cp 0/p_rgh 0/shell
+#cp 0/T 0/shell
+#cp 0/U 0/shell
+
+#cp 0/CH4 0/tubes
+#cp 0/CO2 0/tubes
+#cp 0/epsilon 0/tubes
+#cp 0/k 0/tubes
+#cp 0/p 0/tubes
+#cp 0/p_rgh 0/tubes
+#cp 0/T 0/tubes
+#cp 0/U 0/tubes
+
+#for region in $(foamListRegions)
+#do
+#    runApplication -s $region changeDictionary -region $region
+#done
+
+cp YMap_0 0/shell/
+cp YMap_1 0/tubes/
+
+topoSet -region shell
+topoSet -region tubes
+
+echo
+echo "End"
+
+#------------------------------------------------------------------------------

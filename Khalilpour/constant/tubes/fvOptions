@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+/*
+n ;//Number of hollow fibers
+ri ;//Fiber inner radius
+Lwet ;//Wet fiber length
+L ;//Fiber length
+Rs ;//Shell radius
+rho ;//Fluid density
+c 0.08166;//Constant for hexagonal arrangement of fibers
+phi ;
+
+ept #calc "($n*$ri^2*$Lwet/($Rs^2*$L))";//Porosity of tube region
+kappa #calc "($n*$ri^4*$L)/(8*$Rs^2*$Lwet*$ept)";//Darcy permeability
+
+F #calc "$c*(1-$ept)/$ept";
+fx #calc "$c*(1-$ept)/$ept";
+fy #calc "$c*(1-$ept)/$ept";
+fz #calc "$c*(1-$ept)/$ept";
+dx #calc "$F*$rho/sqrt($kappa)";
+dy #calc "$F*$rho/sqrt($kappa)";
+dz #calc "$F*$rho/sqrt($kappa)";
+*/
+porosityBlockage
+{
+    type            explicitPorositySource;
+
+    explicitPorositySourceCoeffs
+    {
+        selectionMode   cellZone;
+        cellZone        tubes;
+
+        type            DarcyForchheimer;
+
+        d   (-1000 -1000 6.25e10);
+        f   (0 0 0);
+        
+        coordinateSystem
+        {
+            origin  (0 0 0);
+            e1      (1 0 0);
+            e2      (0 1 0);
+        }
+    }
+}
+
+
+
+// ************************************************************************* //

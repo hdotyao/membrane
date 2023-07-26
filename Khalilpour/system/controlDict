@@ -1,0 +1,98 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2206                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     porousMembraneFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+//stopAt          writeNow;
+
+endTime         5000;
+
+deltaT          1e-4;
+
+writeControl    adjustableRunTime;
+
+writeInterval   500;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  12;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+// Maximum diffusion number
+maxDi           10.0;
+
+adjustTimeStep  yes;
+maxCo           0.2;
+maxDeltaT       1;
+
+functions
+{
+/*    sample
+    {
+        type            sets;
+    libs            ("libsampling.so");
+   interpolationScheme cellPoint;
+setFormat       raw;
+
+fields          (CH4 CO2 mag(U) p);
+
+sets
+{
+    data
+    {
+        type    uniform;
+        axis    x;
+        start   (0 0 0.3);
+        end     (0 0 -0.3);
+        nPoints 25;
+    }
+}
+    }*/
+
+    moleFractions1
+    {
+        // Conditional mandatory entries (unmodifiable)
+        // Either of the below depending on
+        // the thermodynamics package used in the solver.
+
+        type                 rhoReactionThermoMoleFractions;
+
+        // Mandatory entries (unmodifiable)
+        libs                 (fieldFunctionObjects);
+
+        // Optional entries (runtime modifiable)
+        phase                <CH4>;
+
+    }
+}
+
+#includeFunc singleGraph
+
+// ************************************************************************* //
